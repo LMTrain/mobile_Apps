@@ -4,15 +4,15 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import Input from './Components/Input/Input';
 import Tinder from './Components/Tinder/Tinder';
 
-// props are a channel to pass info from an instance to a class
 export default class App extends React.Component {
 
   state = {
     value: '',
     jokes: [],
   }
-render() {
 
+// props are a channel to pass info from an instance to a class
+render() {
     return (
       <View style={styles.container}>
         <Input

@@ -12,10 +12,10 @@ class Card extends React.Component {
     }
 }
 
-class NoMoreClass extends React.Component {
+class NoMoreCards extends React.Component {
     render() {
         return (
-            <View style={styles.card}>
+            <View>
                 <Text>No More Jokes</Text>
             </View>
         )
@@ -34,9 +34,9 @@ export default class Tinder extends React.Component {
     render() {
         return (
             <SwipeCards
-                cards={this.props.joke}
+                cards={this.props.jokes}
                 renderCard={(jokeObject) => <Card joke={jokeObject.joke}/>}
-                renderNoMoreCards={() => <NoMoreClass />}
+                renderNoMoreCards={() => <NoMoreCards />}
                 handleYup={this.handleAccept}
                 handleNope={this.handleReject}
             />
