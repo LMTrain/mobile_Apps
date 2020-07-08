@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import Input from './Components/Input/Input';
+import Tinder from './Components/Tinder/Tinder';
 
 // props are a channel to pass info from an instance to a class
 export default class App extends React.Component {
@@ -19,8 +20,9 @@ render() {
             value={this.state.value}
             onChange={(value) => this.setState({ value: value})}
         />
-        <Text>Open up App.js to start working</Text>
-        <Text>Adding a StyleSheet</Text>
+        <Tinder
+            jokes={this.state.jokes}
+        />
         {/* <StatusBar style="auto" /> */}
       </View>
     );

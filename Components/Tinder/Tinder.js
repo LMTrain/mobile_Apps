@@ -16,18 +16,29 @@ class NoMoreClass extends React.Component {
     render() {
         return (
             <View style={styles.card}>
-                No More Jokes
+                <Text>No More Jokes</Text>
             </View>
         )
     }
 }
 
 export default class Tinder extends React.Component {
+
+    handleAccept () {
+        console.log('I like this joke')
+    }
+
+    handleReject () {
+        console.log('I dont like this joke')
+    }
     render() {
         return (
             <SwipeCards
                 cards={this.props.joke}
                 renderCard={(jokeObject) => <Card joke={jokeObject.joke}/>}
+                renderNoMoreCards={() => <NoMoreClass />}
+                handleYup={this.handleAccept}
+                handleNope={this.handleReject}
             />
         )
     }
