@@ -7,10 +7,11 @@ export default class Input extends React.Component {
   fetchData () {
     console.log('this is the value: ', this.props.value);
     fetch(`http://api.icndb.com/jokes/random/${this.props.value}`)
-    .them((response) => {return response.json() })
+    .then((response) => {return response.json() })
     //once info is given, we want to update our parents state
     // We want to share this data with another component, via our parents
-    .then((data) => console.log ('Data: ', data))
+    // .then((data) => console.log ('Data: ', data))
+    .then((data) => this.props.updateJokes(data.value))
   }
   render() {
     //return data, i.e result of excuting function
