@@ -4,6 +4,14 @@ import { StyleSheet, Text, View, TextInput, TouchableHighlight } from 'react-nat
 
 export default class Input extends React.Component {
 
+  fetchData () {
+    console.log('this is the value: ', this.props.value);
+    fetch(`http://api.icndb.com/jokes/random/${this.props.value}`)
+    .them((response) => {return response.json() })
+    //once info is given, we want to update our parents state
+    // We want to share this data with another component, via our parents
+    .then((data) => console.log ('Data: ', data))
+  }
   render() {
     //return data, i.e result of excuting function
 
