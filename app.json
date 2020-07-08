@@ -1,0 +1,12 @@
+{
+  "name": "jokes_app",
+  "displayName": "jokes_app",
+  "expo": {
+    "name": "jokes_app",
+    "slug": "jokes_app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
