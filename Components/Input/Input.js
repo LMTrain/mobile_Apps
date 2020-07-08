@@ -22,19 +22,21 @@ export default class Input extends React.Component {
     )
   }
 }
-
+//Vertically align
+//Horizontally align
+// Take entire height
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // Take entire height
+    flex: 1,
     backgroundColor: 'red',
-    alignItems: 'center', //Horizontally align
-    justifyContent: 'center' //Vertically align
-  }
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
   input: {
-    height: 40,
+    height: 10,
     width: 300,
-    borderColor: 'green'
+    borderColor: 'green',
   }
 
 })
