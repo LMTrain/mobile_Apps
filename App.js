@@ -6,11 +6,14 @@ import Input from './Components/Input/Input';
 // props are a channel to pass info from an instance to a class
 export default function App() {
 
+  state = {
+    value: 'Orange'
+  }
 
   return (
     <View style={styles.container}>
       <Input
-          value={'Apples'}
+          value={this.state.value}
           onChange={(value) => this.setState({ value: value})}
       />
       <Text>Open up App.js to start working</Text>

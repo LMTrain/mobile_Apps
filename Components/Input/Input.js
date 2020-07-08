@@ -18,6 +18,14 @@ export default class Input extends React.Component {
           //text will be what we type in
           onChangeText={(text) => this.props.onChange(text)}
         />
+        <TouchableHighlight
+          style={styles.button}
+          onPress={() => this.fetchData()}
+        >
+          <Text
+            style={styles.text}
+          >Search</Text>
+        </TouchableHighlight>
       </View>
     )
   }
@@ -28,15 +36,26 @@ export default class Input extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   input: {
-    height: 10,
+    height: 40,
     width: 300,
-    borderColor: 'green',
+    borderColor: 'gray',
+    borderWidth: 2,
+  },
+  button: {
+    backgroundColor: 'blue',
+    height: 40,
+    width: 100,
+    borderColor: 'gray',
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  text: {
+    color: 'white'
   }
-
 })
