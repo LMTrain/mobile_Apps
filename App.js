@@ -9,19 +9,26 @@ export default class App extends React.Component {
   state = {
     value: '',
     jokes: [],
+    books: [],
   }
 
 // props are a channel to pass info from an instance to a class
 render() {
+  // console.log('THIS IS APP BOOKS:', this.state.books)
     return (
       <View style={styles.container}>
+        
         <Input
-            updateJokes={(jokes) => this.setState({ jokes: jokes })}
+            updateBooks={(books) => this.setState({books: books})}
+            // updateJokes={(jokes) => this.setState({ jokes: jokes })}
             value={this.state.value}
+            
             onChange={(value) => this.setState({ value: value})}
         />
+        
         <Tinder
-            jokes={this.state.jokes}
+          books={this.state.books}
+            // jokes={this.state.jokes}
         />
         {/* <StatusBar style="auto" /> */}
       </View>
@@ -32,11 +39,14 @@ render() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    fontSize: 20,
+    color: 'red',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   button: {
+    marginTop: 5,
     width: 100,
     height: 50
   }
