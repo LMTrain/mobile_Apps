@@ -14,15 +14,7 @@ export default class Input extends React.Component {
 
   fetchData () {
     console.log('this is the value: ', this.props.value);
-    // fetch(`http://api.icndb.com/jokes/random/${this.props.value}`)
-    // fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.props.value}&maxResults=40&orderBy=newest&key=AIzaSyD5c7Uuj4hd7FPRO9A9o4zhWaCTsffKrNc`)
-    // .then((response) => {return response.json() })
-    //once info is given, we want to update our parents state
-    // We want to share this data with another component, via our parents
-    // .then((data) => console.log ('Data: ', data.items))
-    // .then((data) => this.props.updateBooks(data.items))
    
-    // .then((data) => this.props.updateJokes(data.value))
     axios.get(``)
     // .then((response) => {return response.json() })
     .then(res => {

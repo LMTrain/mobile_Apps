@@ -52,9 +52,9 @@ export default class Tinder extends React.Component {
         // console.log('THIS IS PRPS BOOKS:', this.props.books)
         return (
             <SwipeCards
-                // cards={this.props.jokes}
+                
                 cards={this.props.books}
-                // renderCard={(jokeObject) => <Card joke={jokeObject.joke}/>}
+                
                 renderCard={(bookObject) => 
                     <>
                         <Card book={bookObject.thumbnail}/> 
