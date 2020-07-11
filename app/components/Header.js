@@ -17,7 +17,7 @@ export default class Header extends Component {
           source={require('../img/img1.png')}
           style={styles.logo}
            />
-         <Text style={styles.title}>LCO Shopping Cart</Text>
+         <Text style={styles.title}>PeComms Shopping Cart</Text>
       </View>
     );
   }
