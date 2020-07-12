@@ -1,18 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Header from './app/components/Header';
-import Mid from './app/components/Mid';
+import HeroImage from './app/components/HeroImage';
 import Body from './app/components/Body';
-
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Header />
-        <Mid />
+        <HeroImage />
         <Body />
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -21,7 +20,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    
   },
 });

@@ -4,50 +4,78 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
+  ImageBackground,
   Image,
   StyleSheet,
-  Dimensions,
 } from 'react-native';
 
 export default class Header extends Component {
   render() {
     return (
-      <View style={styles.header}>
-        <Image
-          source={require('../img/img1.png')}
-          style={styles.logo}
-           />
-         <Text style={styles.title}>PeComms Shopping Cart</Text>
-      </View>
+      <ImageBackground
+        style={styles.headerbg}
+        source={{uri:'https://lmtrain.github.io/lm-images/assets/images/space3.webp'}}
+        >
+        <View style={styles.headercontainer}>
+          <View style={styles.profilepiccontainer}>
+            <Image
+              style={styles.mypic}
+              source={require('../img/calendly.jpg')}
+               />
+          </View>
+          <Text style={styles.name}>Laycon Muriziq</Text>
+          
+        </View>
+      </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  header: {
-    height: 80,
+  headerbg: {
     marginTop: 20,
-    backgroundColor: '#fff',
-    flexDirection: 'row',
+    flex: 1,
+    width: 410,
+    height: 220,
+    
+    // alignSelf: 'stretch',
+   
+  },
+  headercontainer: {
+    marginTop: 75,
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
-    width: Dimensions.get('window').width,
-    borderBottomWidth: 4,
-    borderBottomColor: '#ccc',
+    // backgroundColor: 'rgba(0,0,0,0.6)',
+  },
+  profilepiccontainer: {
+    // marginTop: 35,
+    width: 180,
+    height: 180,
 
   },
-  logo:{
-    width: 40,
-    height: 40,
-    marginTop: 20,
+  mypic: {
+    marginBottom: 5,
+    flex: 1,
+    width: null,
+    alignSelf: 'stretch',
+    borderRadius: 90,
+    borderWidth: 1,
+    borderColor: '#fff',
   },
-  title: {
-    marginTop: 20,
-    marginLeft: 10,
-    color: '#000',
+  name: {
+    // marginTop: -13,
+    fontSize: 12,
+    color: '#fff',
     fontWeight: 'bold',
+    marginBottom: -15,
+  },
+  liner: {
+    color: '#fff',
+    // marginTop: -10,
     fontSize: 15,
     fontStyle: 'italic',
+    marginBottom: -29,
   },
 });

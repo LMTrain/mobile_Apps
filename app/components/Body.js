@@ -4,74 +4,123 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
+  ScrollView,
+  Image,
+  Dimensions,
   StyleSheet,
 } from 'react-native';
-import CompoImage from './CompoImage';
-
 
 export default class Body extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.column1}>
-          <CompoImage imageSource={require('../img/img3.jpeg')} />
-        </View>
-        <View style={styles.column2}>
-          <CompoImage imageSource={require('../img/img4.jpg')} />
-        </View>
-        <View style={styles.full}>
-          <CompoImage imageSource={require('../img/img5.jpeg')} />
+      <ScrollView>
+
+        <View style={styles.bigview}>
+        <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/jeffrey-workman-unsplash.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_field-cnn.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_daylight.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/space2.webp'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_wf1.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_hale-azarya.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_wf3.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_field2.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_field3.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_dayrbow.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_field-wiki.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/ls_Mono-Lake.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/crm8.jpg'}}
+               />
+          </View>
+          <View style={styles.smallview}>
+            <Image
+              style={styles.myimage}
+              source={{uri:'https://lmtrain.github.io/lm-images/assets/images/crm5.jpg'}}
+               />
+          </View>  
+          
         </View>
 
-
-        <View style={styles.column2}>
-          <CompoImage imageSource={require('../img/img6.jpeg')} />
-        </View>
-        <View style={styles.column1}>
-          <CompoImage imageSource={require('../img/img2.jpeg')} />
-        </View>
-        <View style={styles.full}>
-          <CompoImage imageSource={require('../img/img3.jpeg')} />
-        </View>
-
-
-        <View style={styles.column1}>
-          <CompoImage imageSource={require('../img/img6.jpeg')} />
-        </View>
-        <View style={styles.column2}>
-          <CompoImage imageSource={require('../img/img2.jpeg')} />
-        </View>
-        <View style={styles.full}>
-          <CompoImage imageSource={require('../img/img3.jpeg')} />
-        </View>
-
-
-
-      </View>
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  bigview: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    padding: 5,
-    backgroundColor: '#3b5998',
   },
-  column1: {
+  smallview: {
+    margin: 2,
+    height: 100,
+    width: (Dimensions.get('window').width / 2) - 4,
+  },
+  myimage: {
     flex: 1,
-    padding: 5,
-  },
-  column2: {
-    flex: 3,
-    padding: 5,
-  },
-  full: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 5,
-  },
+    width: null,
+    alignSelf: 'stretch',
+  }
 });
