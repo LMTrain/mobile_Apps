@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   headerbg: {
     marginTop: 20,
     flex: 1,
-    width: 410,
+    width: 415,
     height: 220,
     
     // alignSelf: 'stretch',
