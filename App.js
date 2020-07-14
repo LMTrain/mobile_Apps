@@ -1,36 +1,76 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import { FlatList } from 'react-native';
+import { Card } from 'react-native-elements';
 
+const data = [
+  {
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something"
+  },
+  {
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something two"
+  },
+  {
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something three"
+  },
+  {
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something four"
+  },
+  {
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something five"
+  },
+  {
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something six"
+  }
+];
 
 
 
 export default class App extends React.Component {
-  async componentWillMount() {
-    await Expo.Font.loadAsync({
-      'Roboto': require('native-base/Fonts/Roboto.ttf'),
-      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-    });
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: data
+    };
   }
 
-   render() {
+  render() {
     return (
-      <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right>
-            <Button transparent>
-              <Icon name='camera' />
-            </Button>
-          </Right>
-        </Header>
+      <FlatList
+        horizontal
+        data={this.state.data}
+        renderItem={({item: rowData}) => {
+          return(
+            <Card
+              style={{height: 200}}
+              title={null}
+              image={{url: rowData.imageUrl }}
+              containerStyle={{padding: 0, width: 160, height: 200, marginTop: 150}}
+              >
+              <Text style={{marginBottom: 10}}>{rowData.title}</Text>
+            </Card>
+          );
+        }
+    }
+    keyExtractor={(item, index) => index}
+      />
+
     );
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
