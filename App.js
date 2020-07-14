@@ -1,33 +1,36 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import Navbar from './components/Navbar';
-import Tabbar from './components/Tabbar';
-import Body from './components/Body';
+import { StyleSheet, Text, View } from 'react-native';
+import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 
-import data from './components/search.json';
+
+
 
 export default class App extends React.Component {
-  render() {
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      'Roboto': require('native-base/Fonts/Roboto.ttf'),
+      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+    });
+  }
+
+   render() {
     return (
-      <View style={styles.container}>
-        <Navbar />
-        <ScrollView>
-          <Body video= {data.items[0]} />
-          <Body video= {data.items[1]} />
-          <Body video= {data.items[2]} />
-          <Body video= {data.items[3]} />
-          <Body video= {data.items[4]} />
-        </ScrollView>
-        <Tabbar />
-      </View>
+      <Header>
+          <Left>
+            <Button transparent>
+              <Icon name='menu' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Header</Title>
+          </Body>
+          <Right>
+            <Button transparent>
+              <Icon name='camera' />
+            </Button>
+          </Right>
+        </Header>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-
-  },
-});
