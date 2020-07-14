@@ -5,28 +5,28 @@ import { Card } from 'react-native-elements';
 
 const data = [
   {
-    imageUrl: "https://lmtrain.github.io/lm-images/assets/images/ls_wf1.jpg",
-    title: "Waterfall on Stones"
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something"
   },
   {
-    imageUrl: "https://lmtrain.github.io/lm-images/assets/images/ls_field-cnn.jpg",
-    title: "Safari Desert"
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something two"
   },
   {
-    imageUrl: "https://lmtrain.github.io/lm-images/assets/images/ls_wf3.jpg",
-    title: "Mountain Waterfall"
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something three"
   },
   {
-    imageUrl: "https://lmtrain.github.io/lm-images/assets/images/jeffrey-workman-unsplash.jpg",
-    title: "Stone Garden Waterfall"
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something four"
   },
   {
-    imageUrl: "https://lmtrain.github.io/lm-images/assets/images/space2.webp",
-    title: "Space Wondering"
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something five"
   },
   {
-    imageUrl: "https://lmtrain.github.io/lm-images/assets/images/space3.webp",
-    title: "Universe"
+    imageUrl: "http://via.placeholder.com/160x160",
+    title: "something six"
   }
 ];
 
