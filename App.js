@@ -1,66 +1,63 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { FlatList } from 'react-native';
-import { Card } from 'react-native-elements';
-
-const data = [
-  {
-    imageUrl: "http://via.placeholder.com/160x160",
-    title: "something"
-  },
-  {
-    imageUrl: "http://via.placeholder.com/160x160",
-    title: "something two"
-  },
-  {
-    imageUrl: "http://via.placeholder.com/160x160",
-    title: "something three"
-  },
-  {
-    imageUrl: "http://via.placeholder.com/160x160",
-    title: "something four"
-  },
-  {
-    imageUrl: "http://via.placeholder.com/160x160",
-    title: "something five"
-  },
-  {
-    imageUrl: "http://via.placeholder.com/160x160",
-    title: "something six"
-  }
-];
-
-
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { Drawer } from 'native-base';
+import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import CardImage from './components/CardImage';
+import FooterBadge from './components/FooterBadge';
+import Sidebar from './components/Sidebar';
 
 export default class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: data
-    };
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      'Roboto': require('native-base/Fonts/Roboto.ttf'),
+      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+    });
   }
 
+  closeDrawer() {
+        this.drawer._root.close()
+  }
+  openDrawer() {
+        this.drawer._root.open()
+  }
+
+
   render() {
+
     return (
-      <FlatList
-        horizontal
-        data={this.state.data}
-        renderItem={({item: rowData}) => {
-          return(
-            <Card
-              style={{height: 200}}
-              title={null}
-              image={{url: rowData.imageUrl }}
-              containerStyle={{padding: 0, width: 160, height: 200, marginTop: 150}}
-              >
-              <Text style={{marginBottom: 10}}>{rowData.title}</Text>
-            </Card>
-          );
-        }
-    }
-    keyExtractor={(item, index) => index}
-      />
+
+      <Drawer
+              ref={(ref) => { this.drawer = ref; }}
+              content={<Sidebar navigator={this.navigator} />}
+              onClose={() => this.closeDrawer()} >
+              <Container>
+                <Header>
+                  <Left>
+                    <Button transparent onPress={()=> this.openDrawer()}>
+                      <Icon name='menu' />
+                    </Button>
+                  </Left>
+                  <Body>
+                    <Title>Side bar Drawer</Title>
+                  </Body>
+                  <Right>
+                    <Button transparent>
+                      <Icon name='camera' />
+                    </Button>
+                  </Right>
+                </Header>
+
+                <FlatList
+                  
+                  data={[{key: 'a'}, {key: 'b'}, {key: 'c'}, {key: 'd'}]}
+                  renderItem={({item}) => <CardImage />}
+                   />
+              </Container>
+              <FooterBadge />
+            </Drawer>
+
+
 
     );
   }
@@ -70,7 +67,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
   },
 });
