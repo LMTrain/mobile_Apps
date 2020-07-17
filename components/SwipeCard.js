@@ -29,6 +29,11 @@ const cards = [
   {
     text: 'Future Renault',
     name: 'Renault in Desert',
+    image: "https://lmtrain.github.io/lm-images/assets/images/futurecar8.jpg",
+  },
+  {
+    text: 'Future Renault',
+    name: 'Renault in Desert',
     image: "https://lmtrain.github.io/lm-images/assets/images/futurecar9.jpg",
   },
 ];
