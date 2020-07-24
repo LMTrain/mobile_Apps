@@ -23,12 +23,12 @@ export default class App extends React.Component {
         </View>
       );
     }
-  }
+}
   
 
 
 
-  const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F5FCFF',
     paddingTop: 40,
