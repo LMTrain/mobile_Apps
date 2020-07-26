@@ -18,7 +18,7 @@ export default class HeaderCustom extends Component {
           </Button>
         </Left>
         <Body>
-          <Title>Tinder Cards</Title>
+          <Title>Tinders Cards</Title>
         </Body>
         <Right>
           <Button transparent>
