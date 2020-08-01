@@ -16,11 +16,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: Text("Hitesh"),
-              accountEmail: Text("hitesh@learncodeonline.in"),
+              accountName: Text("Laycon"),
+              accountEmail: Text("laycon@lmsystmesllc.com"),
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.orange,
-                child: Text("HC"),
+                backgroundColor: Colors.red,
+                child: Text("LM"),
               ),
             ),
             ListTile(
